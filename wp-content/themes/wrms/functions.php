@@ -39,7 +39,7 @@ function post_type_layout() {
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
 		'can_export'          => true,
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
@@ -198,3 +198,6 @@ function wrms_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'wrms_wp_title', 10, 2 );
+
+// Add featured images
+add_theme_support('post-thumbnails', array('page'));

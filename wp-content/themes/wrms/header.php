@@ -9,6 +9,16 @@
    
     <?php wp_head(); ?>
 
+    <style>
+        <?php
+        if (($url = wp_get_attachment_url(get_post_thumbnail_id($post->ID))) != false):
+            echo ".banner {
+                background-image: url({$url});
+            }";
+            
+        endif;
+        ?>
+    </style>
 
 </head>
 <body <?php body_class(); ?>>
