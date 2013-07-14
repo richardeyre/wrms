@@ -1,0 +1,66 @@
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $body_bg;
+    color: $body_text;
+    font: 0.9em/1.5 $body_font;
+    
+    &.admin-bar {
+        .banner {
+            top: 28px;
+        }
+    }
+}
+
+a:link, a:visited {
+    color: $links_off;
+}
+
+a:hover, a:focus {
+    color: $links_on;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0 0 0.5em;
+    font-family: $feature_font;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ol, ul {
+    margin: 0 0 0 2em;
+    padding: 0 0 1.5em;
+}
+
+p {
+    margin: 0;
+    padding: 0 0 1.5em;
+}
+
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.wrap {
+    @include breakpoint($small) {
+        margin: 0 auto;
+        padding: 0 1em;
+        max-width: $vlarge;
+        position: relative;
+    }
+}

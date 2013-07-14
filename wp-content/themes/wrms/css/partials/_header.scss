@@ -1,89 +1,94 @@
+$header_bg: $brand_primary;
+$nav_bg: #ddd;
+
 header {
+    margin: 0 0 40px;
+    padding: 15px 0 0;
+    height: 140px;
+    background: $header_bg;
+    border-bottom: solid 10px $brand_secondary;
 
-    width: 25%;
-    float: left;
-
+    @include breakpoint($small) {
+        margin: 0 0 80px;
+        height: 100px;
+    }
+    
     h1 {
-        margin: 0 10% 10% 0;
-        padding: 1em 0 0;
-        display: block;
-        height: 20em;
-//        background: $brand_primary;
-        color: $brand_secondary;
-        font-size: 1em;
+        padding-bottom: 0;
+        position: relative;
+        text-align: center;
         
         a {
-            padding: 0.5em;
-            display: block;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
             
-            &:link, &:visited {
-                color: $brand_secondary;
-                text-decoration: none;
+            img {        
+                max-height: 170px;
+            }
+            
+        }
+
+        @include breakpoint($small) {
+            @extend .wrap;
+            text-align: left;
+            
+            a {
+                width: 18.5%;
+                float: left; 
             }
 
         }
-
-        img {
-            max-width: 100%;
+        
+    }
+    
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @extend .clearfix;
+        
+        @include breakpoint($small) {
+            background: red;
+            top: 125px;
+            width: 100%;
+            background: $nav_bg;
         }
 
-    }
- 
-    nav {
-        margin: 0 10% 0 0;
-        background: lighten($brand_primary, 45%);
-        border-radius: 0.5em;
-        font-family: $feature_font;
+        div {
+            @extend .wrap;
 
-        div > ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        
-            & > li {
-                border-bottom: solid 1px $body_bg;
+            & > ul { 
+                margin: 0 2.5% 0 0;
+                padding: 0;
+                width: 78.5%;
+                float: right;
+                list-style: none;
+                display: none;
 
-                &:first-child a {
-                    border-top-left-radius: 0.5em;
-                    border-top-right-radius: 0.5em;
-                }
-
-                &:last-child a {
-                    border-bottom-left-radius: 0.5em;
-                    border-bottom-right-radius: 0.5em;
-                }
-
-                & > a {
-                    padding: 0.6em 1em;
+                @include breakpoint($small) {
                     display: block;
 
-                    &:link, &:visited {
-                        color: #333;
-                        text-decoration: none;
-                    }
+                    & > li {
+                        float: left;
 
-                    &:hover, &:focus {
-                        background: lighten($brand_primary, 35%);
+                        & > a {
+                            padding: 1em;
+                            display: block;
+                        }
+
                     }
 
                 }
 
-                &.current-menu-item > a, &.current-menu-ancestor > a {
-                    background: $brand_primary;
-                    color: $brand_primary_text;
-                }
-
-                & > ul {
+                ul {
                     display: none;
                 }
 
-                &.current-menu-item > ul, &.current-menu-ancestor > ul {
-                    display: block;
-                }
-
             }
+            
         }
-
+        
     }
-
+    
 }

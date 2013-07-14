@@ -1,0 +1,8 @@
+$small:  600px;
+$medium: 768px;
+$large:  1024px;
+$vlarge: 1024px;
+
+@mixin breakpoint($breakpoint) {
+    @media only screen and (min-width: $breakpoint) { @content; }
+}

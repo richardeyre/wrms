@@ -1,71 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Sans:400,700);
-header {
-  width: 25%;
-  float: left; }
-  header h1 {
-    margin: 0 10% 10% 0;
-    padding: 1em 0 0;
-    display: block;
-    height: 20em;
-    color: #edd43c;
-    font-size: 1em; }
-    header h1 a {
-      padding: 0.5em;
-      display: block; }
-      header h1 a:link, header h1 a:visited {
-        color: #edd43c;
-        text-decoration: none; }
-    header h1 img {
-      max-width: 100%; }
-  header nav {
-    margin: 0 10% 0 0;
-    background: #c9d9bb;
-    border-radius: 0.5em;
-    font-family: "Roboto Slab", Times, serif; }
-    header nav div > ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none; }
-      header nav div > ul > li {
-        border-bottom: solid 1px #ecf0f1; }
-        header nav div > ul > li:first-child a {
-          border-top-left-radius: 0.5em;
-          border-top-right-radius: 0.5em; }
-        header nav div > ul > li:last-child a {
-          border-bottom-left-radius: 0.5em;
-          border-bottom-right-radius: 0.5em; }
-        header nav div > ul > li > a {
-          padding: 0.6em 1em;
-          display: block; }
-          header nav div > ul > li > a:link, header nav div > ul > li > a:visited {
-            color: #333;
-            text-decoration: none; }
-          header nav div > ul > li > a:hover, header nav div > ul > li > a:focus {
-            background: #afc79b; }
-        header nav div > ul > li.current-menu-item > a, header nav div > ul > li.current-menu-ancestor > a {
-          background: #55703f;
-          color: white; }
-        header nav div > ul > li > ul {
-          display: none; }
-        header nav div > ul > li.current-menu-item > ul, header nav div > ul > li.current-menu-ancestor > ul {
-          display: block; }
-
 html, body {
   height: 100%; }
 
 body {
   margin: 0;
-  padding: 0 2%;
-  background: #ecf0f1;
+  padding: 0;
+  background: white;
   color: #333333;
   font: 0.9em/1.5 "Noto Sans", Arial, sans-serif; }
   body.admin-bar .banner {
     top: 28px; }
 
+a:link, a:visited {
+  color: #0033cc; }
+
+a:hover, a:focus {
+  color: #cc0000; }
+
 h1, h2, h3 {
   margin: 0;
   padding: 0 0 0.5em;
   font-family: "Roboto Slab", Times, serif; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 ol, ul {
   margin: 0 0 0 2em;
@@ -75,56 +34,98 @@ p {
   margin: 0;
   padding: 0 0 1.5em; }
 
-.wrap {
-  margin: 0 auto;
-  position: relative;
-  max-width: 960px;
-  min-height: 100%;
-  overflow: hidden; }
+.clearfix, header nav {
+  zoom: 1; }
+  .clearfix:before, header nav:before, .clearfix:after, header nav:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after, header nav:after {
+    clear: both; }
 
-.banner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 20em;
-  overflow: hidden;
-  background: #303f23 50% 50% no-repeat;
-  background-size: cover;
-  border-bottom: solid 1em #edd43c;
-  z-index: -1; }
-  .banner img {
-    position: absolute;
-    width: 100%; }
-
-.exhibition-pullout {
-  position: absolute;
-  width: 20%;
-  top: 0;
-  right: 0;
-  background: #fff;
-  color: #333333; }
-
-.primary {
-  margin-top: 14.5em;
-  margin-bottom: 8em;
-  padding: 1.5% 2.5%;
-  width: 70%;
-  float: right;
-  background: #ecf0f1;
-  border-radius: 1em;
-  border-top: solid 1em #edd43c; }
-  .primary h1 {
-    color: #55703f;
-    text-transform: uppercase; }
-
-footer {
-  margin: -7em -2% 0;
-  padding: 3em 2%;
-  clear: both;
-  background: #fff;
-  color: #999; }
-  footer p {
+@media only screen and (min-width: 600px) {
+  .wrap, header h1, header nav div {
     margin: 0 auto;
-    padding: 0;
-    max-width: 960px; }
+    padding: 0 1em;
+    max-width: 1024px;
+    position: relative; } }
+
+header {
+  margin: 0 0 40px;
+  padding: 15px 0 0;
+  height: 140px;
+  background: #55703f;
+  border-bottom: solid 10px #edd43c; }
+  @media only screen and (min-width: 600px) {
+    header {
+      margin: 0 0 80px;
+      height: 100px; } }
+  header h1 {
+    padding-bottom: 0;
+    position: relative;
+    text-align: center; }
+    header h1 a {
+      position: relative;
+      z-index: 2;
+      overflow: hidden; }
+      header h1 a img {
+        max-height: 170px; }
+    @media only screen and (min-width: 600px) {
+      header h1 {
+        text-align: left; }
+        header h1 a {
+          width: 18.5%;
+          float: left; } }
+  header nav {
+    position: absolute;
+    top: 0;
+    right: 0; }
+    @media only screen and (min-width: 600px) {
+      header nav {
+        background: red;
+        top: 125px;
+        width: 100%;
+        background: #dddddd; } }
+    header nav div > ul {
+      margin: 0 2.5% 0 0;
+      padding: 0;
+      width: 78.5%;
+      float: right;
+      list-style: none;
+      display: none; }
+      @media only screen and (min-width: 600px) {
+        header nav div > ul {
+          display: block; }
+          header nav div > ul > li {
+            float: left; }
+            header nav div > ul > li > a {
+              padding: 1em;
+              display: block; } }
+      header nav div > ul ul {
+        display: none; }
+
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+
+@media only screen and (min-width: 768px) {
+  body:after {
+    content: "medium"; } }
+@media only screen and (min-width: 1024px) {
+  body:after {
+    content: "large"; } }
+@media only screen and (min-width: 1024px) {
+  body:after {
+    content: "vlarge"; } }
