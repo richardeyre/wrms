@@ -9,6 +9,7 @@ $nav_over_link: #fff;
 header {
     margin: 0 0 40px;
     padding: 15px 0 0;
+    position: relative;
     height: 140px;
     background: $header_bg;
     border-bottom: solid 10px $brand_secondary;
@@ -128,9 +129,11 @@ header {
                         
                         &:before {
                             padding: 0.3em 1em;
-                            content: "→ ";
+                            content: "↳ ";
                             float: left;
                             font-weight: bold;
+                            font-size: 2em;
+                            line-height: 0.5;
                         }
                         
                         li > a {
