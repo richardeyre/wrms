@@ -1,13 +1,17 @@
 <?php
+
+$old_post = $post;
+
 $exhibition = new WP_Query(array(
     'post_type'      => 'exhibition',
     'orderby'        => 'date',
     'order'          => 'DESC',
     'posts_per_page' => 1
 ));
+
+if ($exhibition->have_posts()): $exhibition->the_post();
 ?>
 
-<?php if ($exhibition->have_posts()): $exhibition->the_post(); ?>
 <section class="exhibition-pullout" itemscope itemtype="http://data-vocabulary.org/Event">
     <a href="<?php the_permalink() ?>" itemprop="url">
 
@@ -44,4 +48,8 @@ $exhibition = new WP_Query(array(
     </a>
 
 </section>
-<?php endif; ?>
+
+<?php 
+endif; 
+$post = $old_post;
+?>
