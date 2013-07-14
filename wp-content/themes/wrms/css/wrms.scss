@@ -21,7 +21,7 @@
 
 @viewport {
   width: device-width; }
-
+  
 body:after {
 
     @include breakpoint($medium) {
