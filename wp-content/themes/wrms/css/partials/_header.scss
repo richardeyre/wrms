@@ -24,6 +24,7 @@ header {
     }
     
     h1 {
+        @extend .wrap;
         padding-bottom: 0;
         position: relative;
         text-align: center;
@@ -40,11 +41,10 @@ header {
         }
 
         @include breakpoint($small) {
-            @extend .wrap;
             text-align: left;
             
             a {
-                width: 18.5%;
+                width: 17.5%;
                 float: left; 
             }
 
@@ -92,7 +92,7 @@ header {
                 margin: 0 2.5% 0 0;
                 padding: 0.3em 0;
                 position: relative;
-                width: 78.5%;
+                width: 77.5%;
                 float: right;
                 list-style: none;
                 display: none;
@@ -128,7 +128,7 @@ header {
                         font-size: 0.9em;
                         
                         &:before {
-                            padding: 0.3em 1em;
+                            padding: 0.3em 0 0.3em 0.5em;
                             content: "↳ ";
                             float: left;
                             font-weight: bold;
@@ -149,5 +149,49 @@ header {
         }
         
     }
+
+}
+ 
+.exhibition-pullout {
     
+    @include breakpoint($small) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0.9em;
+
+        a {
+            padding: 0.5em 2% 1em;
+            margin-right: 2.5%;
+            display: block;
+            position: relative;
+            float: right;
+            width: 72.5%;
+            @include breakpoint($large) {
+                width: 56.5%;
+            }
+
+            background: #fff;
+            color: $brand_primary;
+            border-bottom-left-radius: 1em;
+            border-bottom-right-radius: 1em;
+            text-decoration: none;
+
+            &:hover, &:focus {
+                background: #eee;
+                color: #000;
+            }
+
+            h1 {
+                padding: 0;
+            }
+
+            p {
+                padding: 0;
+            }
+
+        }
+        
+    }
 }

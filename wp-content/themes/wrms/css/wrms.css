@@ -44,12 +44,14 @@ p {
   .clearfix:after, header nav:after {
     clear: both; }
 
-@media only screen and (min-width: 600px) {
-  .wrap, header h1, header nav div {
-    margin: 0 auto;
-    padding: 0 1em;
-    max-width: 1024px;
-    position: relative; } }
+.wrap, header h1, header nav div {
+  padding: 0 0 0 2.5%;
+  position: relative; }
+  @media only screen and (min-width: 600px) {
+    .wrap, header h1, header nav div {
+      margin: 0 auto;
+      width: 97.5%;
+      max-width: 1024px; } }
 
 header {
   margin: 0 0 40px;
@@ -79,7 +81,7 @@ header {
       header h1 {
         text-align: left; }
         header h1 a {
-          width: 18.5%;
+          width: 17.5%;
           float: left; } }
   header nav {
     position: absolute;
@@ -114,7 +116,7 @@ header {
       margin: 0 2.5% 0 0;
       padding: 0.3em 0;
       position: relative;
-      width: 78.5%;
+      width: 77.5%;
       float: right;
       list-style: none;
       display: none; }
@@ -140,7 +142,7 @@ header {
             list-style: none;
             font-size: 0.9em; }
             header nav div > ul ul:before {
-              padding: 0.3em 1em;
+              padding: 0.3em 0 0.3em 0.5em;
               content: "↳ ";
               float: left;
               font-weight: bold;
@@ -148,6 +150,36 @@ header {
               line-height: 0.5; }
             header nav div > ul ul li > a {
               padding: 0.3em 0.7em; } }
+
+@media only screen and (min-width: 600px) {
+  .exhibition-pullout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.9em; }
+    .exhibition-pullout a {
+      padding: 0.5em 2% 1em;
+      margin-right: 2.5%;
+      display: block;
+      position: relative;
+      float: right;
+      width: 72.5%;
+      background: #fff;
+      color: #55703f;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      text-decoration: none; }
+      .exhibition-pullout a:hover, .exhibition-pullout a:focus {
+        background: #eee;
+        color: #000; }
+      .exhibition-pullout a h1 {
+        padding: 0; }
+      .exhibition-pullout a p {
+        padding: 0; } }
+    @media only screen and (min-width: 600px) and (min-width: 1024px) {
+      .exhibition-pullout a {
+        width: 56.5%; } }
 
 @-webkit-viewport {
   width: device-width; }

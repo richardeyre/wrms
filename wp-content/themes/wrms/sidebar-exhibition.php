@@ -13,10 +13,16 @@ if ($exhibition->have_posts()): $exhibition->the_post();
 ?>
 
 <section class="exhibition-pullout" itemscope itemtype="http://data-vocabulary.org/Event">
+<div class="wrap">
+
     <a href="<?php the_permalink() ?>" itemprop="url">
 
-        <h1 itemprop="summary">Exhibition <?php the_title(); ?></h1>
+        <h1 itemprop="summary">Exhibition news. Read more →</h1>
 
+        <p>52nd annual exhibition, 29th November &mdash; 1st December 2013.</p>
+        <p>XX layouts and YY traders and demonstrators.</p>
+
+        <!--
         <span itemprop="location" itemscope itemtype="http://data-vocabulary.org/Organization">
             <span itemprop="name">Thornes Park Athletics Stadium</span>, 
             <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
@@ -44,9 +50,11 @@ if ($exhibition->have_posts()): $exhibition->the_post();
                 <time itemprop="endDate" datetime="2013-12-01T17:00-00:00">5:00PM</time>
             </li>
         </ul>
+        -->
 
     </a>
 
+</div>
 </section>
 
 <?php 

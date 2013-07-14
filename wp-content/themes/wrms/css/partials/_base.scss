@@ -57,10 +57,11 @@ p {
 }
 
 .wrap {
-    padding: 0 1em;
+    padding: 0 0 0 2.5%;
     position: relative;
     @include breakpoint($small) {
         margin: 0 auto;
+        width: 97.5%;
         max-width: $vlarge;
     }
 }
